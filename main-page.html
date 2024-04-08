@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="header">
+    <input type="text" placeholder="Search">
+</div>
+<div id="mood-questions">
+    <button id="happy-mood" class="mood-button" type="button">Happy</button>
+    <button id="sad-mood" class="mood-button" type="button">Sad</button>
+    <button id="excited-mood" class="mood-button" type="button">Excited</button>
+    <button id="melancholic-mood" class="mood-button" type="button">Melancholic</button>
+    <button id="heartbroken-mood" class="mood-button" type="button">Heartbroken</button>
+    <button id="energetic-mood" class="mood-button" type="button">Energetic</button>
+</div>
+<div id="mood-recommendations">
+    <div class="song-info">
+        <img src="images/song-cover.png" class="song-image" alt="cover photo of the song">
+        <p class="big-text">Song name</p>
+        <p class="small-text">Artist</p>
+        <button type="button">Play</button>
+    </div>
+    <div class="song-info">
+        <img src="images/song-cover.png" class="song-image" alt="cover photo of the song">
+        <p class="big-text">Song name</p>
+        <p class="small-text">Artist</p>
+        <button type="button">Play</button>
+    </div>
+    <div class="song-info">
+        <img src="images/song-cover.png" class="song-image" alt="cover photo of the song">
+        <p class="big-text">Song name</p>
+        <p class="small-text">Artist</p>
+        <button type="button">Play</button>
+    </div>
+</div>
+<div id="new-releases">
+    <div class="song-info">
+        <img src="images/song-cover.png" class="song-image" alt="cover photo of the song">
+        <p class="big-text">Song name</p>
+        <p class="small-text">Artist</p>
+        <button type="button">Play</button>
+    </div>
+    <div class="song-info">
+        <img src="images/song-cover.png" class="song-image" alt="cover photo of the song">
+        <p class="big-text">Song name</p>
+        <p class="small-text">Artist</p>
+        <button type="button">Play</button>
+    </div>
+    <div class="song-info">
+        <img src="images/song-cover.png" class="song-image" alt="cover photo of the song">
+        <p class="big-text">Song name</p>
+        <p class="small-text">Artist</p>
+        <button type="button">Play</button>
+    </div>
+</div>
+<div id="recommendations">
+    <label for="recommendations-selector">What do you want to see?</label>
+    <select id="recommendations-selector">
+        <option value="song">Song</option>
+        <option value="artist">Artist</option>
+        <option value="album">Album</option>
+        <option value="playlist">Playlist</option>
+    </select>
+    <div id="recommendation">
+        <div class="song-info">
+            <img src="images/song-cover.png" class="song-image" alt="cover photo of the song">
+            <p class="big-text">Song name</p>
+            <p class="small-text">Artist</p>
+            <button type="button">Play</button>
+        </div>
+
+        <div class="artist-info">
+            <img class="artist-cover" src="images/artist.png" alt="artist cover">
+            <p class="big-text">Artist name</p>
+        </div>
+
+        <div class="album-info">
+            <img class="album-cover" src="images/album.png" alt="album cover">
+            <p class="big-text">Album name</p>
+            <p class="small-text">Author | Amount of songs</p>
+        </div>
+
+        <div class="playlist-info">
+            <img class="playlist-cover" src="images/playlist.png" alt="playlist cover">
+            <p class="big-text">Playlist name</p>
+            <p class="small-text">Author | Amount of songs</p>
+        </div>
+    </div>
+</div>
+<div id="playback">
+    <p class="small-text">Song name</p>
+    <button class="control-button" type="button">Back</button>
+    <button class="control-button" type="button">Play</button>
+    <button class="control-button" type="button">Next</button>
+    <button class="like-button" type="button">Like</button>
+    <button class="lyrics-button" type="button">Lyrics</button>
+    <hr class="song-playback">
+    <img src="images/capture-playback" alt="capture-playback">
+</div>
+<div id="side-menu">
+    <div id="user-info">
+        <img class="user-photo" src="images/user.png" alt="user profile picture">
+        <p class="big-text">User name</p>
+    </div>
+    <div id="playlist-finder">
+        <div id="finder-controls">
+            <button class="finder-buttons" id="create-playlist">Create Playlist</button>
+            <button class="finder-buttons" id="find-playlist">Find Playlist</button>
+        </div>
+        <div id="finder-result">
+            <div class="playlist-overview">
+                <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
+                <p class="big-text">Playlist name</p>
+                <p class="small-text">Author | Amount of songs</p>
+            </div>
+            <div class="playlist-overview">
+                <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
+                <p class="big-text">Playlist name</p>
+                <p class="small-text">Author | Amount of songs</p>
+            </div>
+            <div class="playlist-overview">
+                <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
+                <p class="big-text">Playlist name</p>
+                <p class="small-text">Author | Amount of songs</p>
+            </div>
+        </div>
+    </div>
+    <div id="friends-activity">
+        <p class="header-text">Friend`s activity</p>
+        <p class="small-text">150 friends</p>
+        <p class="small-text">See what songs your friends and followers are listening to.</p>
+        <div class="user-playback">
+            <img class="user-photo" src="images/user.png" alt="user profile picture">
+            <p class="big-text">Name</p>
+            <p class="small-text">Listening to...</p>
+        </div>
+        <button class="friends-button" type="button">See 10 others</button>
+    </div>
+</div>
+</body>
+</html>
