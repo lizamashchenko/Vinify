@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login to Vinify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body>
-    <div id="header">
+    <header>
         <img src="images/logo.png" alt="logo">
-    </div>
+        <p class="logo-text">Vinify</p>
+    </header>
     <div id="login-section">
         <p class="big-text">Welcome back!</p>
         <p class="small-text">Enter your credentials to login</p>
@@ -15,10 +24,10 @@
         <input id="email" type="text">
         <div id="password-block">
             <label for="password">Password</label>
-            <input id="password" type="password">
             <button type="submit">forgot password</button>
+            <input id="password" type="password">
         </div>
-        <button type="submit">Login</button>
+        <button class="login" type="submit">Login</button>
         <p>Don`t have an account? <a href="create-account-page.html">Sign Up!</a> </p>
     </div>
 </body>

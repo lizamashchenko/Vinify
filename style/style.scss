@@ -1,0 +1,168 @@
+$blue : #4793af;
+$yellow : #ffc470;
+$red-light : #dd5746;
+$red-dark : #8b322c;
+
+@mixin main-font {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+
+//@mixin button-style {
+//  --c: #229091; /* the color*/
+//
+//  box-shadow: 0 0 0 .1em inset var(--c);
+//  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+//  background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+//  var(--_g) calc(200% - var(--_p, 0%)) 0%,
+//  var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+//  var(--_g) calc(200% - var(--_p, 0%)) 100%;
+//  background-size: 50.5% calc(var(--_p, 0%) / 2 + .5%);
+//  outline-offset: .1em;
+//  transition: background-size .4s, background-position 0s .4s;
+//}
+
+
+html, body {
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+}
+
+div, nav, footer, header, body {
+  background-color: $yellow;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+}
+p, label, a, button {
+  @include main-font;
+}
+label {
+  font-size: 12px;
+}
+
+header {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  background-color: $blue;
+
+  img {
+    height: 70px;
+    width: fit-content;
+  }
+}
+
+#login-section {
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+
+  .big-text {
+    font-size: 3rem;
+    color: $red-dark;
+  }
+  a, p, label {
+    color: $red-dark;
+
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: left;
+  }
+  a {
+    color: $red-light;
+  }
+  input {
+    height: 1.5rem;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid lightgray;
+  }
+
+  #password-block {
+    margin-top: 10px;
+    display: grid;
+
+    label {
+      grid-row: 1;
+      grid-column: 1;
+    }
+    button {
+      grid-row: 1;
+      grid-column: 2;
+
+      width: fit-content;
+      justify-self: end;
+
+      background: none;
+      border: none;
+
+      text-decoration: underline;
+
+      color: $red-light;
+
+      font-size: 1rem;
+    }
+    input {
+      grid-row: 2;
+      grid-column: span 2;
+    }
+  }
+
+  .login {
+    width: 100%;
+    height: 2rem;
+
+    margin-top: 20px;
+    font-size: 1.4rem;
+
+    border-radius: 7px;
+    border: 1px solid darkgray;
+
+    color: $red-dark;
+
+    --c:  #4793af; /* the color*/
+
+    box-shadow: 0 0 0 .1em inset var(--c);
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background:
+            var(--_g) calc(var(--_p,0%) - 100%) 0%,
+            var(--_g) calc(200% - var(--_p,0%)) 0%,
+            var(--_g) calc(var(--_p,0%) - 100%) 100%,
+            var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+  }
+  .login:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+  }
+  .login:active {
+    box-shadow: 0 0 9e9q inset #0009;
+    background-color: var(--c);
+    color: #fff;
+  }
+}
+
+.big-text {
+  font-weight: 500;
+  font-size: 20px;
+}
+.logo-text {
+  font-family: Monoton;
+  font-weight: 300;
+  margin-left: 15px;
+  font-size: 25px;
+}
