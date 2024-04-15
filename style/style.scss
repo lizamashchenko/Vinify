@@ -86,8 +86,23 @@ header {
   input {
     height: 1.5rem;
     width: 100%;
-    border-radius: 7px;
-    border: 1px solid lightgray;
+    border: 0px;
+    border-bottom: solid 2px $red-dark;
+    background-color: transparent;
+
+    font-size: 1.2rem;
+    color: $blue;
+
+    &:hover {
+      border-image: linear-gradient(to right, $red-dark, $red-light);
+      border-image-slice: 1;
+      transition: border-image 4s;
+      background-position: 200% 0;
+    }
+    &:focus {
+      border: 0px;
+      border-bottom: 2px solid $red-dark;
+    }
   }
 
   #password-block {
@@ -128,9 +143,9 @@ header {
     font-size: 1.4rem;
 
     border-radius: 7px;
-    border: 1px solid darkgray;
+    border: 0px;
 
-    color: $red-dark;
+    color: $blue;
 
     --c:  #4793af; /* the color*/
 
@@ -147,6 +162,7 @@ header {
   }
   .login:hover {
     --_p: 100%;
+    color: $yellow;
     transition: background-position .4s, background-size 0s;
   }
   .login:active {

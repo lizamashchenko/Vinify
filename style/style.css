@@ -59,8 +59,21 @@ header img {
 #login-section input {
   height: 1.5rem;
   width: 100%;
-  border-radius: 7px;
-  border: 1px solid lightgray;
+  border: 0px;
+  border-bottom: solid 2px #8b322c;
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: #4793af;
+}
+#login-section input:hover {
+  border-image: linear-gradient(to right, #8b322c, #dd5746);
+  border-image-slice: 1;
+  transition: border-image 4s;
+  background-position: 200% 0;
+}
+#login-section input:focus {
+  border: 0px;
+  border-bottom: 2px solid #8b322c;
 }
 #login-section #password-block {
   margin-top: 10px;
@@ -91,8 +104,8 @@ header img {
   margin-top: 20px;
   font-size: 1.4rem;
   border-radius: 7px;
-  border: 1px solid darkgray;
-  color: #8b322c;
+  border: 0px;
+  color: #4793af;
   --c: #4793af; /* the color*/
   box-shadow: 0 0 0 0.1em inset var(--c);
   --_g: linear-gradient(var(--c) 0 0) no-repeat;
@@ -103,6 +116,7 @@ header img {
 }
 #login-section .login:hover {
   --_p: 100%;
+  color: #ffc470;
   transition: background-position 0.4s, background-size 0s;
 }
 #login-section .login:active {
