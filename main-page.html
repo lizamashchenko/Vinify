@@ -2,12 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Title</title>
 </head>
 <body>
-<div id="header">
+<header>
     <input type="text" placeholder="Search">
-</div>
+</header>
 <div id="mood-questions">
     <button id="happy-mood" class="mood-button" type="button">Happy</button>
     <button id="sad-mood" class="mood-button" type="button">Sad</button>
@@ -92,17 +100,23 @@
 </div>
 <div id="playback">
     <p class="small-text">Song name</p>
-    <button class="control-button" type="button">Back</button>
-    <button class="control-button" type="button">Play</button>
-    <button class="control-button" type="button">Next</button>
+    <div id="playback-main">
+        <div id="playback-controls">
+            <button class="control-button" type="button">Back</button>
+            <button class="control-button" type="button">Play</button>
+            <button class="control-button" type="button">Next</button>
+        </div>
+        <div id="playback-slider">
+            <hr class="song-playback">
+            <img src="images/capture-playback" alt="capture-playback">
+        </div>
+    </div>
     <button class="like-button" type="button">Like</button>
     <button class="lyrics-button" type="button">Lyrics</button>
-    <hr class="song-playback">
-    <img src="images/capture-playback" alt="capture-playback">
 </div>
 <div id="side-menu">
     <div id="user-info">
-        <img class="user-photo" src="images/user.png" alt="user profile picture">
+        <img class="user-photo" src="images/user.jpg" alt="user profile picture">
         <p class="big-text">User name</p>
     </div>
     <div id="playlist-finder">
@@ -112,17 +126,17 @@
         </div>
         <div id="finder-result">
             <div class="playlist-overview">
-                <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
+                <img class="playlist-cover" src="images/playlist.jpg" alt="playlist cover">
                 <p class="big-text">Playlist name</p>
                 <p class="small-text">Author | Amount of songs</p>
             </div>
             <div class="playlist-overview">
-                <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
+                <img class="playlist-cover" src="images/playlist.jpg" alt="playlist cover">
                 <p class="big-text">Playlist name</p>
                 <p class="small-text">Author | Amount of songs</p>
             </div>
             <div class="playlist-overview">
-                <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
+                <img class="playlist-cover" src="images/playlist.jpg" alt="playlist cover">
                 <p class="big-text">Playlist name</p>
                 <p class="small-text">Author | Amount of songs</p>
             </div>
@@ -133,7 +147,7 @@
         <p class="small-text">150 friends</p>
         <p class="small-text">See what songs your friends and followers are listening to.</p>
         <div class="user-playback">
-            <img class="user-photo" src="images/user.png" alt="user profile picture">
+            <img class="user-photo" src="images/user.jpg" alt="user profile picture">
             <p class="big-text">Name</p>
             <p class="small-text">Listening to...</p>
         </div>

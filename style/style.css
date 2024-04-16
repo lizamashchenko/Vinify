@@ -14,6 +14,10 @@ div, nav, footer, header, body {
   justify-self: center;
 }
 
+div:nth-child(2) {
+  margin-top: 30px;
+}
+
 p, label, a, button {
   font-family: "EB Garamond", serif;
   font-optical-sizing: auto;
@@ -26,12 +30,27 @@ label {
   font-size: 12px;
 }
 
+.user-photo {
+  height: 60px;
+  width: 60px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50px;
+}
+
+.playlist-cover {
+  width: 23%;
+  background-size: cover;
+}
+
 header {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   height: auto;
   background-color: #4793af;
+  position: fixed;
+  min-height: 50px;
 }
 header img {
   height: 70px;
@@ -123,6 +142,209 @@ header img {
   box-shadow: 0 0 9000000000q inset rgba(0, 0, 0, 0.6);
   background-color: var(--c);
   color: #fff;
+}
+
+#mood-questions {
+  display: grid;
+  grid-template-columns: fit-content(30%) fit-content(30%) fit-content(30%);
+}
+#mood-questions #happy-mood, #mood-questions #sad-mood, #mood-questions #excited-mood {
+  grid-row: 1;
+  width: fit-content;
+  align-self: center;
+  justify-self: center;
+}
+#mood-questions #melancholic-mood, #mood-questions #heartbroken-mood, #mood-questions #energetic-mood {
+  grid-row: 2;
+  width: fit-content;
+  justify-self: center;
+  align-self: center;
+}
+
+.song-info {
+  margin: 0px;
+  display: grid;
+  height: fit-content;
+  grid-template-columns: fit-content(20%) fit-content(40%) fit-content(20%);
+  grid-column-gap: 7px;
+}
+.song-info p {
+  margin: 0px;
+}
+.song-info img {
+  grid-row: span 2;
+  grid-column: 1;
+}
+.song-info .big-text {
+  grid-row: 1;
+  grid-column: 2;
+}
+.song-info .small-text {
+  grid-row: 2;
+  grid-column: 2;
+}
+.song-info button {
+  grid-row: span 2;
+  grid-column: 3;
+}
+
+#side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #f4f4f4;
+  z-index: 99;
+}
+#side-menu #user-info {
+  height: auto;
+  flex-direction: row;
+  padding: 10px 10px 10px 10px;
+}
+#side-menu #user-info .user-photo {
+  margin-right: 20px;
+  margin-left: 10px;
+}
+#side-menu #playlist-finder {
+  height: 40%;
+  margin-top: 0px;
+}
+#side-menu #playlist-finder p {
+  margin: 0;
+}
+#side-menu #playlist-finder #finder-controls {
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#side-menu #playlist-finder #finder-controls #create-playlist {
+  margin-left: 10px;
+}
+#side-menu #playlist-finder #finder-controls #find-playlist {
+  margin-right: 10px;
+}
+#side-menu #playlist-finder #finder-result {
+  overflow-y: scroll;
+  flex-direction: column;
+}
+#side-menu #playlist-finder #finder-result .playlist-overview {
+  margin: 0px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: fit-content(60px) auto;
+}
+#side-menu #playlist-finder #finder-result .playlist-overview img {
+  height: 100%;
+  width: 100%;
+  grid-row: span 2;
+  grid-column: 1;
+}
+#side-menu #playlist-finder #finder-result .playlist-overview .big-text {
+  margin-left: 5px;
+  grid-row: 1;
+  grid-column: 2;
+}
+#side-menu #playlist-finder #finder-result .playlist-overview .small-text {
+  margin-left: 5px;
+  grid-row: 2;
+  grid-column: 2;
+}
+#side-menu #friends-activity {
+  height: 60%;
+}
+#side-menu #friends-activity p {
+  margin: 0px;
+  margin-top: 5px;
+}
+#side-menu #friends-activity .user-playback {
+  display: grid;
+}
+#side-menu #friends-activity .user-playback p {
+  margin: 0px;
+}
+#side-menu #friends-activity .user-playback img {
+  grid-column: 1;
+  grid-row: span 2;
+}
+#side-menu #friends-activity .user-playback .big-text {
+  grid-row: 1;
+  grid-column: 2;
+}
+#side-menu #friends-activity .user-playback .small-text {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+#playback {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 100;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#playback #playback-main {
+  max-width: 80%;
+}
+#playback #playback-main #playback-controls {
+  width: 20%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+#playback #playback-main #playback-slider {
+  position: relative;
+}
+
+.mood-button {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.mood-button:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform 0.2s ease-out;
+  z-index: -1;
+}
+.mood-button:hover:after {
+  transform: translate(0, 0);
+}
+.mood-button:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+.mood-button:hover {
+  outline: 0;
 }
 
 .big-text {
