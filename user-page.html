@@ -38,7 +38,7 @@
 
 <div id="side-menu">
     <div id="user-info">
-        <img class="user-photo" src="images/user.png" alt="user profile picture">
+        <img class="user-photo" id="side-user-photo" src="images/user.png" alt="user profile picture">
         <p class="big-text" id="side-user-name">User name</p>
     </div>
     <div id="playlist-finder">
@@ -88,6 +88,7 @@
             }
             if (user.photo) {
                 document.getElementById('user-photo').src = user.photo;
+                document.getElementById('side-user-photo').src = user.photo;
             }
         } else {
             window.location.href = 'login-page.html';
