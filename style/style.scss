@@ -108,7 +108,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: auto;
+  height: 80px;
   background-color: $blue;
   position: fixed;
   left: 0;
@@ -117,41 +117,122 @@ header {
   padding: 10px; /* Add padding to give space around the elements */
   z-index: 100;
 
-  .search-input {
-    margin-left: 30px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: width 0.3s ease;
-    width: 200px;
-  }
-
-  .search-input:focus {
-    width: 300px;
-    outline: none;
-  }
-
-  .search-button {
+  #user-info {
     margin-right: 30px;
-    background: linear-gradient(to right, #4CAF50, #2196F3);
-    border: none;
-    padding: 8px 20px;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: $blue;
+    margin-top: 0px;
+    width: fit-content;
+    height: 100%;
+    flex-direction: row;
+
+    .user-photo {
+      margin-right: 20px;
+      margin-left: 10px;
+    }
+  }
+  #search-block {
+    width: fit-content;
+    flex-direction: row;
+    height: 100%;
+    background-color: $blue;
+
+    .search-input {
+      margin-left: 30px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: width 0.3s ease;
+      width: 200px;
+    }
+
+    .search-input:focus {
+      width: 300px;
+      outline: none;
+    }
+
+    .search-button {
+      margin-left: 30px;
+
+      width: fit-content;
+      text-align: center;
+
+      min-width: 100px;
+      height: 2rem;
+      margin-top: 0px;
+      font-size: 1.4rem;
+
+      border-radius: 7px;
+      border: 0px;
+
+      color: $yellow;
+
+      --c: #ffc470; /* the color*/
+
+      box-shadow: 0 0 0 .1em inset var(--c);
+      --_g: linear-gradient(var(--c) 0 0) no-repeat;
+      background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p, 0%)) 0%,
+      var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p, 0%)) 100%;
+      background-size: 50.5% calc(var(--_p, 0%) / 2 + .5%);
+      outline-offset: .1em;
+      transition: background-size .4s, background-position 0s .4s;
+
+      &:hover {
+        --_p: 100%;
+        color: $blue;
+        transition: background-position .4s, background-size 0s;
+      }
+
+      &:active {
+        box-shadow: 0 0 9e9q inset #0009;
+        background-color: var(--c);
+        color: #fff;
+      }
+    }
   }
 
-  .search-button:hover {
-    background: linear-gradient(to right, #43A047, #1E88E5);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
 
   img {
     height: 70px;
     width: fit-content;
+  }
+}
+
+button {
+  width: 100%;
+  height: 2rem;
+
+  margin-top: 20px;
+  font-size: 1.4rem;
+
+  border-radius: 7px;
+  border: 0px;
+
+  color: $blue;
+
+  --c:  #4793af; /* the color*/
+
+  box-shadow: 0 0 0 .1em inset var(--c);
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background:
+          var(--_g) calc(var(--_p,0%) - 100%) 0%,
+          var(--_g) calc(200% - var(--_p,0%)) 0%,
+          var(--_g) calc(var(--_p,0%) - 100%) 100%,
+          var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+
+  &:hover {
+    --_p: 100%;
+    color: $yellow;
+    transition: background-position .4s, background-size 0s;
+  }
+  &:active {
+    box-shadow: 0 0 9e9q inset #0009;
+    background-color: var(--c);
+    color: #fff;
   }
 }
 
@@ -225,42 +306,6 @@ header {
       grid-column: span 2;
     }
   }
-
-  .login {
-    width: 100%;
-    height: 2rem;
-
-    margin-top: 20px;
-    font-size: 1.4rem;
-
-    border-radius: 7px;
-    border: 0px;
-
-    color: $blue;
-
-    --c:  #4793af; /* the color*/
-
-    box-shadow: 0 0 0 .1em inset var(--c);
-    --_g: linear-gradient(var(--c) 0 0) no-repeat;
-    background:
-            var(--_g) calc(var(--_p,0%) - 100%) 0%,
-            var(--_g) calc(200% - var(--_p,0%)) 0%,
-            var(--_g) calc(var(--_p,0%) - 100%) 100%,
-            var(--_g) calc(200% - var(--_p,0%)) 100%;
-    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
-    outline-offset: .1em;
-    transition: background-size .4s, background-position 0s .4s;
-  }
-  .login:hover {
-    --_p: 100%;
-    color: $yellow;
-    transition: background-position .4s, background-size 0s;
-  }
-  .login:active {
-    box-shadow: 0 0 9e9q inset #0009;
-    background-color: var(--c);
-    color: #fff;
-  }
 }
 
 #mood-questions {
@@ -317,48 +362,55 @@ header {
 }
 
 #side-menu {
+  margin-top: 100px;
   position: fixed;
   top: 0;
   right: 0;
   width: 300px;
   height: 100%;
   background-color: #f4f4f4;
-  z-index: 10;
+  z-index: 101;
 
-  #user-info {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    padding: 10px 10px 10px 10px;
-
-    .user-photo {
-      margin-right: 20px;
-      margin-left: 10px;
-    }
-  }
 
   #playlist-finder {
     width: 100%;
-    height: 40%;
+    height: 100%;
     margin-top: 0px;
+    .hide-button {
+      width: fit-content;
+      padding-left: 15px;
+      padding-right: 15px;
+      align-self: flex-end;
+      margin-right: 10px;
+    }
     p {
       margin: 0;
     }
     #finder-controls {
+      height: 20%;
       margin-top: 10px;
       flex-direction: row;
       justify-content: space-between;
 
       #create-playlist {
+        height: auto;
+        font-size: 15px;
+        width: 40%;
         margin-left: 10px;
+        margin-top: 0px;
       }
       #find-playlist {
+        font-size: 15px;
+        height: auto;
+        width: 40%;
         margin-right: 10px;
+        margin-top: 0px;
       }
     }
 
     #finder-result {
-      overflow-y: scroll;
+      margin-top: 0px;
+      height: 80%;
       flex-direction: column;
 
       .playlist-overview {
@@ -424,37 +476,61 @@ header {
   height: auto;
   z-index: 100;
 
-  flex-direction: row;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: auto;
+  align-items: center;
+  justify-content: center;
 
-  #playback-main {
-    max-width: 80%;
-    #playback-controls {
-      width: 20%;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
+  text-align: center;
+
+  p {
+    grid-row: 1;
+    grid-column: span 2;
+  }
+  #playback-controls {
+    margin-top: 0px;
+    width: fit-content;
+    grid-row: 2;
+    grid-column: span 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      margin-top: 0px;
+      margin-right: 20px;
+      margin-left: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
-    #playback-slider {
-      position: relative;
+  }
+  #playback-slider {
+    grid-row: 3;
+    grid-column: 1;
+    position: relative;
+  }
+  #playback-buttons {
+    flex-direction: row;
+    width: fit-content;
+
+    grid-row: 3;
+    grid-column: 2;
+
+    button {
+      margin-left: 30px;
+      padding-right: 10px;
+      padding-left: 10px;
     }
   }
 }
 
 .mood-button {
   align-items: center;
-  background-color: #fee6e3;
-  border: 2px solid #111;
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: #111;
-  cursor: pointer;
   display: flex;
-  font-family: Inter,sans-serif;
   font-size: 16px;
   height: 48px;
   justify-content: center;
-  line-height: 24px;
   max-width: 100%;
   padding: 0 25px;
   position: relative;
@@ -462,35 +538,6 @@ header {
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
-  touch-action: manipulation;
-
-  &:after {
-    background-color: #111;
-    border-radius: 8px;
-    content: "";
-    display: block;
-    height: 48px;
-    left: 0;
-    width: 100%;
-    position: absolute;
-    top: -2px;
-    transform: translate(8px, 8px);
-    transition: transform .2s ease-out;
-    z-index: -1;
-  }
-
-  &:hover:after {
-    transform: translate(0, 0);
-  }
-
-  &:active {
-    background-color: #ffdeda;
-    outline: 0;
-  }
-
-  &:hover {
-    outline: 0;
-  }
 }
 
 .big-text {

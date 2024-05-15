@@ -14,8 +14,14 @@
 </head>
 <body>
     <header>
-        <input type="text" class="search-input" placeholder="Search...">
-        <button class="search-button">Search</button>
+        <div id="search-block">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-button">Search</button>
+        </div>
+        <div id="user-info">
+            <img class="user-photo" src="images/user.jpg" alt="user profile picture">
+            <p class="big-text">User name</p>
+        </div>
     </header>
     <div id="mood-questions">
         <button id="happy-mood" class="mood-button" type="button">Happy</button>
@@ -104,26 +110,23 @@
     </div>
     <div id="playback">
         <p class="small-text">Song name</p>
-        <div id="playback-main">
-            <div id="playback-controls">
-                <button class="control-button" type="button">Back</button>
-                <button class="control-button" type="button">Play</button>
-                <button class="control-button" type="button">Next</button>
-            </div>
-            <div id="playback-slider">
-                <hr class="song-playback">
-                <img src="images/capture-playback" alt="capture-playback">
-            </div>
+        <div id="playback-controls">
+            <button class="control-button" type="button">Back</button>
+            <button class="control-button" type="button">Play</button>
+            <button class="control-button" type="button">Next</button>
         </div>
-        <button class="like-button" type="button">Like</button>
-        <button class="lyrics-button" type="button">Lyrics</button>
+        <div id="playback-slider">
+            <hr class="song-playback">
+            <img src="images/capture-playback" alt="capture-playback">
+        </div>
+        <div id="playback-buttons">
+            <button class="like-button" type="button">Like</button>
+            <button class="lyrics-button" type="button">Lyrics</button>
+        </div>
     </div>
     <div id="side-menu">
-        <div id="user-info">
-            <img class="user-photo" src="images/user.jpg" alt="user profile picture">
-            <p class="big-text">User name</p>
-        </div>
         <div id="playlist-finder">
+            <button class="hide-button">Hide</button>
             <div id="finder-controls">
                 <button class="finder-buttons" id="create-playlist">Create Playlist</button>
                 <button class="finder-buttons" id="find-playlist">Find Playlist</button>
@@ -146,17 +149,17 @@
                 </div>
             </div>
         </div>
-        <div id="friends-activity">
-            <p class="header-text">Friend`s activity</p>
-            <p class="small-text">150 friends</p>
-            <p class="small-text">See what songs your friends and followers are listening to.</p>
-            <div class="user-playback">
-                <img class="user-photo" src="images/user.jpg" alt="user profile picture">
-                <p class="big-text">Name</p>
-                <p class="small-text">Listening to...</p>
-            </div>
-            <button class="friends-button" type="button">See 10 others</button>
-        </div>
+<!--        <div id="friends-activity">-->
+<!--            <p class="header-text">Friend`s activity</p>-->
+<!--            <p class="small-text">150 friends</p>-->
+<!--            <p class="small-text">See what songs your friends and followers are listening to.</p>-->
+<!--            <div class="user-playback">-->
+<!--                <img class="user-photo" src="images/user.jpg" alt="user profile picture">-->
+<!--                <p class="big-text">Name</p>-->
+<!--                <p class="small-text">Listening to...</p>-->
+<!--            </div>-->
+<!--            <button class="friends-button" type="button">See 10 others</button>-->
+<!--        </div>-->
     </div>
 </body>
 </html>
