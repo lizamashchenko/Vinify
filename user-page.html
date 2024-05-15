@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User Account</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <div id="header">
@@ -11,37 +12,17 @@
 
 <div class="user-overview">
     <div class="user-info">
-        <img class="user-photo" src="images/user.png" alt="user cover photo">
-        <p class="big-text">Name</p>
-        <p class="small-text">Description</p>
+        <img class="user-photo" id="user-photo" src="images/user.png" alt="user cover photo">
+        <p class="big-text" id="user-name">Name</p>
+        <p class="small-text" id="user-description">Description</p>
         <div class="user-buttons">
             <button class="user-button" id="friends-button">Friends</button>
             <button class="user-button" id="subscriptions-button">Subscriptions</button>
+            <button class="user-button" id="settings-button">Settings</button>
         </div>
     </div>
-
 </div>
-<div class="saved-playlist">
-    <div class="playlist-overview">
-        <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
-        <p class="big-text">Playlist name</p>
-        <p class="small-text">Author | Amount of songs</p>
-    </div>
-    <div class="playlist-overview">
-        <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
-        <p class="big-text">Playlist name</p>
-        <p class="small-text">Author | Amount of songs</p>
-    </div>
-    <div class="playlist-overview">
-        <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
-        <p class="big-text">Playlist name</p>
-        <p class="small-text">Author | Amount of songs</p>
-    </div>
-    <div class="playlist-overview">
-        <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
-        <p class="big-text">Playlist name</p>
-        <p class="small-text">Author | Amount of songs</p>
-    </div>
+<div class="saved-playlist" id="saved-playlist">
 </div>
 
 <div id="playback">
@@ -57,8 +38,8 @@
 
 <div id="side-menu">
     <div id="user-info">
-        <img class="user-photo" src="images/user.png" alt="user profile picture">
-        <p class="big-text">User name</p>
+        <img class="user-photo" id="side-user-photo" src="images/user.png" alt="user profile picture">
+        <p class="big-text" id="side-user-name">User name</p>
     </div>
     <div id="playlist-finder">
         <div id="finder-controls">
@@ -95,5 +76,28 @@
         <button class="friends-button" type="button">See 10 others</button>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const user = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (user) {
+            document.getElementById('user-name').textContent = user.email;
+            document.getElementById('side-user-name').textContent = user.email;
+            if (user.description) {
+                document.getElementById('user-description').textContent = user.description;
+            }
+            if (user.photo) {
+                document.getElementById('user-photo').src = user.photo;
+                document.getElementById('side-user-photo').src = user.photo;
+            }
+        } else {
+            window.location.href = 'login-page.html';
+        }
+
+        document.getElementById('settings-button').addEventListener('click', function () {
+            window.location.href = 'settings-page.html';
+        });
+    });
+</script>
 </body>
 </html>
