@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User Account</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <div id="header">
@@ -12,36 +13,16 @@
 <div class="user-overview">
     <div class="user-info">
         <img class="user-photo" src="images/user.png" alt="user cover photo">
-        <p class="big-text">Name</p>
-        <p class="small-text">Description</p>
+        <p class="big-text" id="user-name">Name</p>
+        <p class="small-text" id="user-description">Description</p>
         <div class="user-buttons">
             <button class="user-button" id="friends-button">Friends</button>
             <button class="user-button" id="subscriptions-button">Subscriptions</button>
         </div>
     </div>
-
 </div>
-<div class="saved-playlist">
-    <div class="playlist-overview">
-        <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
-        <p class="big-text">Playlist name</p>
-        <p class="small-text">Author | Amount of songs</p>
-    </div>
-    <div class="playlist-overview">
-        <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
-        <p class="big-text">Playlist name</p>
-        <p class="small-text">Author | Amount of songs</p>
-    </div>
-    <div class="playlist-overview">
-        <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
-        <p class="big-text">Playlist name</p>
-        <p class="small-text">Author | Amount of songs</p>
-    </div>
-    <div class="playlist-overview">
-        <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
-        <p class="big-text">Playlist name</p>
-        <p class="small-text">Author | Amount of songs</p>
-    </div>
+<div class="saved-playlist" id="saved-playlist">
+    <!-- Playlists will be inserted here -->
 </div>
 
 <div id="playback">
@@ -58,7 +39,7 @@
 <div id="side-menu">
     <div id="user-info">
         <img class="user-photo" src="images/user.png" alt="user profile picture">
-        <p class="big-text">User name</p>
+        <p class="big-text" id="side-user-name">User name</p>
     </div>
     <div id="playlist-finder">
         <div id="finder-controls">
@@ -95,5 +76,19 @@
         <button class="friends-button" type="button">See 10 others</button>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const user = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (user) {
+            document.getElementById('user-name').textContent = user.email;  // Assuming user object has 'email' property
+            document.getElementById('side-user-name').textContent = user.email;
+            // You can add more fields to display as needed
+        } else {
+            // Redirect to login if no user is logged in
+            window.location.href = 'login-page.html';
+        }
+    });
+</script>
 </body>
 </html>
