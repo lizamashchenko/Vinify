@@ -107,7 +107,7 @@ label {
   padding: 10px; /* Add padding to give space around the elements */
   z-index: 100;
 }
-.site-header #user-info {
+.site-header .user-info {
   margin-right: 30px;
   background-color: #4793af;
   margin-top: 0px;
@@ -115,17 +115,17 @@ label {
   height: 100%;
   flex-direction: row;
 }
-.site-header #user-info .user-photo {
+.site-header .user-info .user-photo {
   margin-right: 20px;
   margin-left: 10px;
 }
-.site-header #search-block {
+.site-header .search-block {
   width: fit-content;
   flex-direction: row;
   height: 100%;
   background-color: #4793af;
 }
-.site-header #search-block .search-input {
+.site-header .search-block .search-input {
   margin-left: 30px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -133,11 +133,11 @@ label {
   transition: width 0.3s ease;
   width: 200px;
 }
-.site-header #search-block .search-input:focus {
+.site-header .search-block .search-input:focus {
   width: 300px;
   outline: none;
 }
-.site-header #search-block .search-button {
+.site-header .search-block .search-button {
   margin-left: 30px;
   width: fit-content;
   text-align: center;
@@ -156,12 +156,12 @@ label {
   outline-offset: 0.1em;
   transition: background-size 0.4s, background-position 0s 0.4s;
 }
-.site-header #search-block .search-button:hover {
+.site-header .search-block .search-button:hover {
   --_p: 100%;
   color: #4793af;
   transition: background-position 0.4s, background-size 0s;
 }
-.site-header #search-block .search-button:active {
+.site-header .search-block .search-button:active {
   box-shadow: 0 0 9000000000q inset rgba(0, 0, 0, 0.6);
   background-color: var(--c);
   color: #fff;
@@ -306,7 +306,34 @@ button:active {
   margin-bottom: 20px;
 }
 
-#side-menu {
+.playlist-overview {
+  flex-direction: column;
+}
+
+.playlist-header {
+  flex-direction: column;
+}
+
+.playlist-songs {
+  flex-direction: column;
+}
+
+.song-full {
+  flex-direction: row;
+}
+.song-full .song-info-short {
+  flex-direction: column;
+}
+.song-full .song-info-short p {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.song-full:last-child {
+  margin-bottom: 150px;
+}
+
+.side-menu {
   margin-top: 100px;
   position: fixed;
   top: 0;
@@ -316,96 +343,96 @@ button:active {
   background-color: #f4f4f4;
   z-index: 101;
 }
-#side-menu #playlist-finder {
+.side-menu .playlist-finder {
   width: 100%;
   height: 100%;
   margin-top: 0px;
 }
-#side-menu #playlist-finder .hide-button {
+.side-menu .playlist-finder .hide-button {
   width: fit-content;
   padding-left: 15px;
   padding-right: 15px;
   align-self: flex-end;
   margin-right: 10px;
 }
-#side-menu #playlist-finder p {
+.side-menu .playlist-finder p {
   margin: 0;
 }
-#side-menu #playlist-finder #finder-controls {
+.side-menu .playlist-finder .finder-controls {
   height: 20%;
   margin-top: 10px;
   flex-direction: row;
   justify-content: space-between;
 }
-#side-menu #playlist-finder #finder-controls #create-playlist {
+.side-menu .playlist-finder .finder-controls #create-playlist {
   height: auto;
   font-size: 15px;
   width: 40%;
   margin-left: 10px;
   margin-top: 0px;
 }
-#side-menu #playlist-finder #finder-controls #find-playlist {
+.side-menu .playlist-finder .finder-controls #find-playlist {
   font-size: 15px;
   height: auto;
   width: 40%;
   margin-right: 10px;
   margin-top: 0px;
 }
-#side-menu #playlist-finder #finder-result {
+.side-menu .playlist-finder .finder-result {
   margin-top: 0px;
   height: 80%;
   flex-direction: column;
 }
-#side-menu #playlist-finder #finder-result .playlist-overview {
+.side-menu .playlist-finder .finder-result .playlist-overview {
   margin: 0px;
   margin-bottom: 10px;
   display: grid;
   grid-template-columns: fit-content(60px) auto;
 }
-#side-menu #playlist-finder #finder-result .playlist-overview img {
+.side-menu .playlist-finder .finder-result .playlist-overview img {
   height: 100%;
   width: 100%;
   grid-row: span 2;
   grid-column: 1;
 }
-#side-menu #playlist-finder #finder-result .playlist-overview .big-text {
+.side-menu .playlist-finder .finder-result .playlist-overview .big-text {
   margin-left: 5px;
   grid-row: 1;
   grid-column: 2;
 }
-#side-menu #playlist-finder #finder-result .playlist-overview .small-text {
+.side-menu .playlist-finder .finder-result .playlist-overview .small-text {
   margin-left: 5px;
   grid-row: 2;
   grid-column: 2;
 }
-#side-menu #friends-activity {
+.side-menu .friends-activity {
   width: 100%;
   height: 60%;
 }
-#side-menu #friends-activity p {
+.side-menu .friends-activity p {
   margin: 0px;
   margin-top: 5px;
 }
-#side-menu #friends-activity .user-playback {
+.side-menu .friends-activity .user-playback {
   display: grid;
 }
-#side-menu #friends-activity .user-playback p {
+.side-menu .friends-activity .user-playback p {
   margin: 0px;
 }
-#side-menu #friends-activity .user-playback img {
+.side-menu .friends-activity .user-playback img {
   grid-column: 1;
   grid-row: span 2;
 }
-#side-menu #friends-activity .user-playback .big-text {
+.side-menu .friends-activity .user-playback .big-text {
   grid-row: 1;
   grid-column: 2;
 }
-#side-menu #friends-activity .user-playback .small-text {
+.side-menu .friends-activity .user-playback .small-text {
   grid-row: 2;
   grid-column: 2;
 }
 
-#playback {
+.playback {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -419,11 +446,11 @@ button:active {
   justify-content: center;
   text-align: center;
 }
-#playback p {
+.playback p {
   grid-row: 1;
   grid-column: span 2;
 }
-#playback #playback-controls {
+.playback .playback-controls {
   margin-top: 0px;
   width: fit-content;
   grid-row: 2;
@@ -432,25 +459,25 @@ button:active {
   align-items: center;
   justify-content: space-between;
 }
-#playback #playback-controls button {
+.playback .playback-controls button {
   margin-top: 0px;
   margin-right: 20px;
   margin-left: 20px;
   padding-left: 20px;
   padding-right: 20px;
 }
-#playback #playback-slider {
+.playback .playback-slider {
   grid-row: 3;
   grid-column: 1;
   position: relative;
 }
-#playback #playback-buttons {
+.playback .playback-buttons {
   flex-direction: row;
   width: fit-content;
   grid-row: 3;
   grid-column: 2;
 }
-#playback #playback-buttons button {
+.playback .playback-buttons button {
   margin-left: 30px;
   padding-right: 10px;
   padding-left: 10px;
