@@ -525,6 +525,25 @@ button {
   }
 }
 
+#song-info-page {
+  margin-top: 110px;
+}
+
+#lyrics {
+  margin-top: 10px;
+  margin-bottom: 48px;
+  overflow-y: scroll;
+
+  .current-line {
+    color: $red-dark;
+    font-size: 20px;
+  }
+  .inactive-lyrics {
+    color: $red-light;
+    font-size: 15px;
+  }
+}
+
 .mood-button {
   align-items: center;
   display: flex;

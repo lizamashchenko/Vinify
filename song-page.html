@@ -2,14 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="style/style.css" rel="stylesheet">
     <title>Title</title>
 </head>
 <body>
-<div id="header">
-    <input type="text" placeholder="Search">
-</div>
 
-<div class="lyrics">
+<header>
+    <div id="search-block">
+        <input type="text" class="search-input" placeholder="Search...">
+        <button class="search-button">Search</button>
+    </div>
+    <div id="user-info">
+        <img class="user-photo" src="images/user.jpg" alt="user profile picture">
+        <p class="big-text">User name</p>
+    </div>
+</header>
+<div id="song-info-page">
+    <img class="song-image" alt="song cover" src="images/song-cover.png">
+    <p class="song-name">Song name</p>
+    <p class="artist-name">Artist name</p>
+    <p class="album-name">Album name</p>
+</div>
+<div id="lyrics">
     <p class="inactive-lyrics">some lyrics</p>
     <p class="inactive-lyrics">some lyrics</p>
     <p class="inactive-lyrics">some lyrics</p>
@@ -22,54 +36,58 @@
 
 <div id="playback">
     <p class="small-text">Song name</p>
-    <button class="control-button" type="button">Back</button>
-    <button class="control-button" type="button">Play</button>
-    <button class="control-button" type="button">Next</button>
-    <button class="like-button" type="button">Like</button>
-    <button class="lyrics-button" type="button">Lyrics</button>
-    <hr class="song-playback">
-    <img src="images/capture-playback" alt="capture-playback">
+    <div id="playback-controls">
+        <button class="control-button" type="button">Back</button>
+        <button class="control-button" type="button">Play</button>
+        <button class="control-button" type="button">Next</button>
+    </div>
+    <div id="playback-slider">
+        <hr class="song-playback">
+        <img src="images/capture-playback" alt="capture-playback">
+    </div>
+    <div id="playback-buttons">
+        <button class="like-button" type="button">Like</button>
+        <button class="lyrics-button" type="button">Lyrics</button>
+    </div>
 </div>
 
 <div id="side-menu">
-    <div id="user-info">
-        <img class="user-photo" src="images/user.png" alt="user profile picture">
-        <p class="big-text">User name</p>
-    </div>
     <div id="playlist-finder">
+        <button class="hide-button">Hide</button>
         <div id="finder-controls">
             <button class="finder-buttons" id="create-playlist">Create Playlist</button>
             <button class="finder-buttons" id="find-playlist">Find Playlist</button>
         </div>
         <div id="finder-result">
             <div class="playlist-overview">
-                <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
+                <img class="playlist-cover" src="images/playlist.jpg" alt="playlist cover">
                 <p class="big-text">Playlist name</p>
                 <p class="small-text">Author | Amount of songs</p>
             </div>
             <div class="playlist-overview">
-                <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
+                <img class="playlist-cover" src="images/playlist.jpg" alt="playlist cover">
                 <p class="big-text">Playlist name</p>
                 <p class="small-text">Author | Amount of songs</p>
             </div>
             <div class="playlist-overview">
-                <img class="playlist-cover" src="images/playlist-cover" alt="playlist cover">
+                <img class="playlist-cover" src="images/playlist.jpg" alt="playlist cover">
                 <p class="big-text">Playlist name</p>
                 <p class="small-text">Author | Amount of songs</p>
             </div>
         </div>
     </div>
-    <div id="friends-activity">
-        <p class="header-text">Friend`s activity</p>
-        <p class="small-text">150 friends</p>
-        <p class="small-text">See what songs your friends and followers are listening to.</p>
-        <div class="user-playback">
-            <img class="user-photo" src="images/user.png" alt="user profile picture">
-            <p class="big-text">Name</p>
-            <p class="small-text">Listening to...</p>
-        </div>
-        <button class="friends-button" type="button">See 10 others</button>
-    </div>
+    <!--        <div id="friends-activity">-->
+    <!--            <p class="header-text">Friend`s activity</p>-->
+    <!--            <p class="small-text">150 friends</p>-->
+    <!--            <p class="small-text">See what songs your friends and followers are listening to.</p>-->
+    <!--            <div class="user-playback">-->
+    <!--                <img class="user-photo" src="images/user.jpg" alt="user profile picture">-->
+    <!--                <p class="big-text">Name</p>-->
+    <!--                <p class="small-text">Listening to...</p>-->
+    <!--            </div>-->
+    <!--            <button class="friends-button" type="button">See 10 others</button>-->
+    <!--        </div>-->
 </div>
+
 </body>
 </html>

@@ -438,6 +438,24 @@ button:active {
   padding-left: 10px;
 }
 
+#song-info-page {
+  margin-top: 110px;
+}
+
+#lyrics {
+  margin-top: 10px;
+  margin-bottom: 48px;
+  overflow-y: scroll;
+}
+#lyrics .current-line {
+  color: #8b322c;
+  font-size: 20px;
+}
+#lyrics .inactive-lyrics {
+  color: #dd5746;
+  font-size: 15px;
+}
+
 .mood-button {
   align-items: center;
   display: flex;
