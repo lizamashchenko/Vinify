@@ -6,13 +6,18 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-<div id="header">
-    <input type="text" placeholder="Search">
-</div>
-
-<div class="user-overview">
+<header class="site-header">
+    <div class="search-block">
+        <input type="text" class="search-input" placeholder="Search...">
+        <button class="search-button">Search</button>
+    </div>
     <div class="user-info">
-        <img class="user-photo" id="user-photo" src="images/user.png" alt="user cover photo">
+        <img class="user-photo" src="images/user.jpg" alt="user profile picture">
+        <p class="big-text">User name</p>
+    </div>
+</header>
+    <div class="user-info">
+        <img class="user-photo" id="user-photo" src="images/user.jpg" alt="user cover photo">
         <p class="big-text" id="user-name">Name</p>
         <p class="small-text" id="user-description">Description</p>
         <div class="user-buttons">
@@ -21,16 +26,15 @@
             <button class="user-button" id="settings-button">Settings</button>
         </div>
     </div>
-</div>
 <div class="saved-playlist" id="saved-playlist">
 </div>
 
 <div class="playback">
     <p class="small-text">Song name</p>
     <div class="playback-controls">
-        <button class="control-button" type="button">Back</button>
-        <button class="control-button" type="button">Play</button>
-        <button class="control-button" type="button">Next</button>
+        <button class="control-button btn-arrow btn-arrow-left" type="button"></button>
+        <button class="control-button" id="play-button" type="button"></button>
+        <button class="control-button btn-arrow btn-arrow-right" type="button"></button>
     </div>
     <div class="playback-slider">
         <hr class="song-playback">
@@ -78,7 +82,6 @@
     <!--            <button class="friends-button" type="button">See 10 others</button>-->
     <!--        </div>-->
 </div>
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const user = JSON.parse(localStorage.getItem('loggedInUser'));

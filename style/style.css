@@ -14,10 +14,6 @@ div, nav, footer, header, body {
   justify-self: center;
 }
 
-div:nth-child(2) {
-  margin-top: 30px;
-}
-
 p, label, a, button {
   font-family: "EB Garamond", serif;
   font-optical-sizing: auto;
@@ -485,6 +481,82 @@ button:active {
 
 #song-info-page {
   margin-top: 110px;
+}
+
+#play-button {
+  all: unset;
+  box-sizing: border-box;
+  width: 0;
+  height: 30px;
+  border-style: solid;
+  border-width: 18px 0 18px 30px;
+  border-color: transparent transparent transparent #dd5746;
+  cursor: pointer;
+  will-change: border-width;
+  transition: all 0.2s ease;
+}
+#play-button.paused {
+  border-style: double;
+  border-width: 0px 0 0px 30px;
+}
+#play-button:hover {
+  border-color: transparent transparent transparent #8b322c;
+}
+
+.btn-arrow {
+  color: transparent;
+  display: block;
+  position: relative;
+  width: 10px;
+  height: 40px;
+  background-color: rgba(71, 147, 175, 0.05);
+  transition: all 150ms ease-out;
+}
+.btn-arrow::before, .btn-arrow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #dd5746;
+  transition: all 150ms ease-out;
+}
+.btn-arrow::before {
+  width: 75%;
+  height: 25%;
+}
+.btn-arrow::after {
+  width: 25%;
+  height: 75%;
+}
+.btn-arrow:hover, .btn-arrow:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.btn-arrow:hover::before, .btn-arrow:hover::after, .btn-arrow:focus::before, .btn-arrow:focus::after {
+  background-color: #dd5746;
+}
+.btn-arrow.btn-arrow-left::before, .btn-arrow.btn-arrow-left::after, .btn-arrow.btn-arrow-right::before, .btn-arrow.btn-arrow-right::after {
+  top: 12.5%;
+  left: 12.5%;
+}
+.btn-arrow.btn-arrow-left {
+  transform: rotate(-45deg);
+}
+.btn-arrow.btn-arrow-right {
+  transform: rotate(135deg);
+}
+
+.user-info {
+  margin-top: 110px;
+}
+.user-info .user-buttons {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.user-info button {
+  width: fit-content;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #lyrics {
